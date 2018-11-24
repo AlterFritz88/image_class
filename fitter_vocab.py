@@ -1,15 +1,6 @@
 def fitter_age():
-    from sklearn.model_selection import train_test_split
     from sklearn.feature_extraction.text import CountVectorizer
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    from sklearn.feature_extraction.text import TfidfTransformer
-    import numpy as np
-    from sklearn.pipeline import Pipeline
     from transliterate import translit
-    from sklearn.linear_model import SGDClassifier
-    import pickle
-    from sklearn import metrics
-    from sklearn.naive_bayes import MultinomialNB
 
     labels = []
     data_dict = {}
@@ -68,17 +59,8 @@ def fitter_age():
     return data
 
 def fitter_WWII():
-    from sklearn.model_selection import train_test_split
     from sklearn.feature_extraction.text import CountVectorizer
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    from sklearn.feature_extraction.text import TfidfTransformer
-    import numpy as np
-    from sklearn.pipeline import Pipeline
     from transliterate import translit
-    from sklearn.linear_model import SGDClassifier
-    import pickle
-    from sklearn import metrics
-    from sklearn.naive_bayes import MultinomialNB
 
     labels = []
     data_dict = {}
@@ -114,17 +96,8 @@ def fitter_WWII():
     return data
 
 def fitter_modern():
-    from sklearn.model_selection import train_test_split
     from sklearn.feature_extraction.text import CountVectorizer
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    from sklearn.feature_extraction.text import TfidfTransformer
-    import numpy as np
-    from sklearn.pipeline import Pipeline
     from transliterate import translit
-    from sklearn.linear_model import SGDClassifier
-    import pickle
-    from sklearn import metrics
-    from sklearn.naive_bayes import MultinomialNB
 
     labels = []
     data_dict = {}
