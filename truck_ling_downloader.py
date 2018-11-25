@@ -53,24 +53,9 @@ n_label = np.array(label)
 
 trainX, testX, trainY, testY = train_test_split(data_vectorised, n_label, test_size = 0.2, random_state = 42)
 
-from sklearn import metrics
-from sklearn.naive_bayes import MultinomialNB
-
-
-nb_classifier = MultinomialNB(alpha=0.3)
-nb_classifier.fit(trainX, trainY)
-pred = nb_classifier.predict(testX)
-score = metrics.accuracy_score(testY, pred)
-print(score)
-a = nb_classifier.predict(vectorizer.transform(['Panzer']))
-print(a)
-print()
-
 from sklearn.linear_model import SGDClassifier
 
 model_modern = Pipeline([
-
-
                 ('clf', SGDClassifier(loss='hinge', penalty='l2',alpha=1e-3, random_state=42, max_iter=3, tol=None)),
               ])
 model_modern.fit(trainX, trainY)
@@ -121,10 +106,10 @@ with open('modern_tech', 'r') as file:
 
 
 
-
+5
 #from 10000
 
-for model_page in range(10036, 11001, 1):
+for model_page in range(10775, 11001, 1):
     print(model_page)
 
     url = "https://www.track-link.com/gallery/{}".format(model_page)

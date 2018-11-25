@@ -12,7 +12,7 @@ data_dict = {}
 data = []
 label = []
 vectorizer = CountVectorizer()
-with open('modern_tech', 'r') as file:
+with open('spisok', 'r') as file:
     for line in file:
         if len(line) < 3:
             continue
@@ -39,7 +39,7 @@ print(labels)
 n_label = np.array(label)
 
 
-trainX, testX, trainY, testY = train_test_split(data_vectorised, n_label, test_size = 0.2, random_state = 42)
+trainX, testX, trainY, testY = train_test_split(data_vectorised, n_label, test_size = 0.15, random_state = 42)
 
 from sklearn import metrics
 from sklearn.naive_bayes import MultinomialNB
@@ -68,5 +68,5 @@ print(a)
 
 print('accuracy %s' % metrics.accuracy_score(y_pred, testY))
 
-filename = 'modern'
+filename = 'wwii'
 pickle.dump(nb, open(filename, 'wb'))

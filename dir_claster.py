@@ -9,11 +9,11 @@ import random as rd
 работать с бэкапом данных!!!!
 '''
 
-li_dir = os.listdir(path="truck-link")
+li_dir = os.listdir(path="truck-link/sample")
 
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(li_dir)
-kmeans = KMeans(n_clusters=310).fit(X)
+kmeans = KMeans(n_clusters=2).fit(X)
 print(kmeans.labels_)
 
 dick_paths = {}
@@ -29,15 +29,15 @@ for key, value in dick_paths.items():
 
     for i in range(len(value)):
         if i == 0:
-            temp_path = 'truck-link/{0}/'.format(value[0])
+            temp_path = 'truck-link/sample/{0}/'.format(value[0])
             print('into', temp_path)
 
         else:
-            for item in os.listdir('truck-link/{0}'.format(value[i])):
-                sourse = 'truck-link/' + value[i] + '/' + item
+            for item in os.listdir('truck-link/sample/{0}'.format(value[i])):
+                sourse = 'truck-link/sample/' + value[i] + '/' + item
                 destin = temp_path + '{}'.format(rd.randint(10,100000))
                 if os.stat(sourse).st_size < 25000:
                     os.remove(sourse)
                 else:
                     os.rename(sourse,  destin)
-            os.rmdir('truck-link/{0}'.format(value[i]))
+            os.rmdir('truck-link/sample/{0}'.format(value[i]))
